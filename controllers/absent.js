@@ -1,16 +1,10 @@
-const models = require('../models/index')
+const models = require('../models/absent')
 const helpers = require('../helpers/index')
+// const { PORT } = require('../configs/consume_env')
+// const uniqid = require('uniqid')
+// const userModel = require('../models/user')
 
 module.exports = {
-    class_schedule: async (req, res) => {
-        try {
-            result = await models.class_schedule()
-            helpers.response(res, 200, result)
-        } catch (error) {
-            if (error) console.log(error)
-            helpers.customErrorResponse(res, 404, 'Not Found!')
-        }
-    },
     absent: async (req, res) => {
         try {
             const user_id = req.headers['user-id']
@@ -28,15 +22,14 @@ module.exports = {
             helpers.customErrorResponse(res, 500, 'Server maybe busy!')
         }
     },
-    materialSharing: async (req, res) => {
+    absent_recap: async (req, res) => {
         try {
-            const idClass = req.params.idClass
-
-
+            const class_id = req.query.class_id
+            result = await models.absent_recap(class_id)
+            helpers.response(res, 200, result)
         } catch (error) {
             if (error) console.log(error)
-            helpers.customErrorResponse(res, 500, 'Server maybe busy!')
+            helpers.customErrorResponse(res, 404, 'Not Found!')
         }
     }
-
 }
