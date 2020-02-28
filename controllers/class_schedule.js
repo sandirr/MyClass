@@ -37,7 +37,7 @@ module.exports = {
                 class_room: req.body.class_room
             }
             result = await models.add_class_schedule(data)
-            helpers.response(res, 200, "succes add class")
+            helpers.response(res, 200, "success add class")
         } catch (error) {
             if (error) console.log(error)
             helpers.customErrorResponse(res, 500, 'Server maybe busy!')
@@ -57,7 +57,7 @@ module.exports = {
                 class_room: req.body.class_room
             }
             result = await models.edit_class_schedule(data, idClass)
-            helpers.response(res, 200, "succes edit class")
+            helpers.response(res, 200, "success edit class")
         } catch (error) {
             if (error) console.log(error)
             helpers.customErrorResponse(res, 500, 'Server maybe busy!')
@@ -67,7 +67,7 @@ module.exports = {
         try {
             const idClass = req.params.idClass
             result = await models.delete_class_schedule(idClass)
-            helpers.response(res, 200, "succes delete class")
+            helpers.response(res, 200, "success delete class")
         } catch (error) {
             if (error) console.log(error)
             helpers.customErrorResponse(res, 500, 'Server maybe busy!')

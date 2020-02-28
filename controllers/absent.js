@@ -1,8 +1,5 @@
 const models = require('../models/absent')
 const helpers = require('../helpers/index')
-// const { PORT } = require('../configs/consume_env')
-// const uniqid = require('uniqid')
-// const userModel = require('../models/user')
 
 module.exports = {
     absent: async (req, res) => {
