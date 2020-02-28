@@ -51,13 +51,13 @@ module.exports = {
     see_users: async (req, res) => {
         try {
             const id = req.headers["user-id"]
-            const cekUser = await userModel.cekAdmin(id)
+            const cekUser = await userModel.cekUser(id)
             const user = cekUser[0]
-            if (user.status !== 'admin') return res.json({ message: `Your're Unauthorized` })
+            if (user.status !== 'admin') return res.json({ message: `Your're Unauthorize` })
             const result = await userModel.see_users()
             helper.response(res, 200, result)
         } catch (error) {
-            res.json({ message: `You're Unauthorized` })
+            res.json({ message: `You're Unauthorize` })
         }
     },
     delete_user: async (req, res) => {

@@ -5,6 +5,9 @@ const logger = require('morgan')
 const navigator = require('./routes/index')
 const { PORT } = require('./configs/consume_env')
 const fileUpload = require('express-fileupload')
+const cors = require('cors')
+
+app.use(cors('*'))
 
 app.listen(PORT, () => {
     console.log('server is running :' + PORT)

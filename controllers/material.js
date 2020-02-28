@@ -28,7 +28,7 @@ module.exports = {
     uploadMaterial: async (req, res) => {
         try {
             const id = req.headers["user-id"]
-            const cekUser = await userModel.cekAdmin(id)
+            const cekUser = await userModel.cekUser(id)
             const user = cekUser[0]
             if (user.status !== 'admin') return res.json({ message: `Your're Unauthorized` })
 
@@ -71,7 +71,7 @@ module.exports = {
     updateMaterial: async (req, res) => {
         try {
             const id = req.headers["user-id"]
-            const cekUser = await userModel.cekAdmin(id)
+            const cekUser = await userModel.cekUser(id)
             const user = cekUser[0]
             if (user.status !== 'admin') return res.json({ message: `Your're Unauthorized` })
 
@@ -113,7 +113,7 @@ module.exports = {
     deleteMaterial: async (req, res) => {
         try {
             const id = req.headers["user-id"]
-            const cekUser = await userModel.cekAdmin(id)
+            const cekUser = await userModel.cekUser(id)
             const user = cekUser[0]
             if (user.status !== 'admin') return res.json({ message: `Your're Unauthorized` })
 
