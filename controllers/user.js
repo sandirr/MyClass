@@ -6,9 +6,15 @@ const { JWT_KEY } = require('../configs/consume_env')
 module.exports = {
     register: async (req, res) => {
         try {
+            const id = req.headers["user-id"]
+            const cekUser = await userModel.cekAdmin(id)
+            const user = cekUser[0]
+
+            if (user.status !== 'admin') return res.json({ message: `Your're Unauthorized` })
+
             const salt = helper.generateSalt(18)
             const hashPassword = helper.setPassword(req.body.password, salt)
-            const status = req.query.status || 1
+            const status = req.query.status || 'user'
             const data = {
                 name: req.body.name,
                 email: req.body.email,
@@ -28,7 +34,6 @@ module.exports = {
             password: req.body.password,
             email: req.body.email
         }
-        console.log(data.email)
         const emailValid = await userModel.checkEmail(data.email)
         const dataUser = emailValid[0]
         const hashPassword = helper.setPassword(data.password, dataUser.salt)

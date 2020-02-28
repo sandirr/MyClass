@@ -6,11 +6,11 @@ const navigator = require('./routes/index')
 const { PORT } = require('./configs/consume_env')
 
 app.listen(PORT, () => {
-    console.log('server is running :'+ PORT )
+    console.log('server is running :' + PORT)
 })
 
 app.use(logger('dev'))
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: false }))
 
-app.use('/', navigator)
+app.use('/v1', navigator)

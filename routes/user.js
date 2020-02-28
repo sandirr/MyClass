@@ -1,9 +1,10 @@
 const express = require('express')
 const Route = express.Router()
-const { class_schedule } = require('../controllers/index')
+const { register, login } = require('../controllers/user')
 const { authentication, authorization } = require('../helpers/auth')
 
 Route
-    .get('/', authentication, authorization, class_schedule)
+    .post('/register', authentication, authorization, register)
+    .post('/login', login)
 
 module.exports = Route

@@ -1,10 +1,12 @@
 const express = require('express')
 const Route = express.Router()
-const class_schedule = require('./class_schedule')
+const class_ = require('./class')
+const user = require('./user')
 const absent = require('./absent')
 
 Route
-    .use('/v1', class_schedule)
-    .use('/v1/user', absent)
+    .use('/', class_)
+    .use('/user', user)
+    .use('/absent', absent)
 
 module.exports = Route
