@@ -102,6 +102,8 @@ All API requests are made by sending a secure HTTPS request using one of the fol
 
 ## Endpoints
 
+**POSTMAN COLLECTION https://www.getpostman.com/collections/d3849345d0256421d80d**
+
 **IMPORTANT!** All endpoint except **Login** and **Register** must have **Headers** :
 
 - **token**: **`token`**
