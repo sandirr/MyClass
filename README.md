@@ -99,8 +99,10 @@ All API requests are made by sending a secure HTTPS request using one of the fol
 - `DELETE` Delete a resource
 
 <hr id="endpoints">
+
 ## Endpoints
-**IMPORTANT!** All endpoint except **Login** and **Register** must have **header** :
+
+**IMPORTANT!** All endpoint except **Login** and **Register** must have **Headers** :
 
 - **token**: **`token`**
 - **user-id** : **`id user`**
