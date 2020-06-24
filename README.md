@@ -73,7 +73,12 @@ JWT_KEY = 'rahasiabanget'
 ```
 
 <hr>
+<h3 id='start'>Start Development Server</h3>
 
+```bash
+$ npm start
+```
+<hr>
 <h2 id='def'>Other Dependencies</h2>
 
 - [body-parser](#)
@@ -84,20 +89,6 @@ JWT_KEY = 'rahasiabanget'
 - [morgan](#)
 - [mysql](#)
 - [uniqid](#)
-
-<hr>
-<h3 id='start'>Install All Dependencies</h3>
-
-```bash
-$ npm install
-```
-
-<hr>
-<h3 id='start'>Start Development Server</h3>
-
-```bash
-$ npm start
-```
 
 ### HTTP Requests
 All API requests are made by sending a secure HTTPS request using one of the following methods, depending on the action being taken:
